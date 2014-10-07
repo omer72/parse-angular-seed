@@ -1,0 +1,31 @@
+<p>This is the partial for view 1.</p>
+
+<div>
+    <ul class="example-animate-container">
+        <li class="animate-repeat" ng-repeat="user in userList ">
+            [{{$index + 1}}] {{user.id}} {{user.attributes.username}} {{user.attributes.phone}}
+        </li>
+        <li class="animate-repeat" ng-if="userList.length == 0">
+            <strong>No results found...</strong>
+        </li>
+    </ul>
+</div>
+
+<form ng-submit="createUser()" novalidate class="simple-form">
+    <div class="form-group">
+        <input type="text" ng-model="user.username"  size="30" placeholder="user name">
+    </div>
+
+    <div class="form-group">
+        <input type="password" ng-model="user.password" placeholder="password"/>
+    </div>
+    <div class="form-group">
+        <input type="text" ng-model="user.phone" placeholder="phone"/>
+    </div>
+    <div class="form-group">
+        <input type="email" ng-model="user.email" placeholder="email"/>
+    </div>
+    <div class="form-group">
+        <input class="btn-primary" type="submit" value="add">
+    </div>
+</form>
